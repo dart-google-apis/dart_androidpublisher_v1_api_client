@@ -4,19 +4,19 @@ part of androidpublisher_v1_api_client;
 class SubscriptionPurchase {
 
   /** Whether the subscription will automatically be renewed when it reaches its current expiry time. */
-  bool autoRenewing;
+  core.bool autoRenewing;
 
   /** Time at which the subscription was granted, in milliseconds since Epoch. */
-  String initiationTimestampMsec;
+  core.String initiationTimestampMsec;
 
   /** This kind represents a subscriptionPurchase object in the androidpublisher service. */
-  String kind;
+  core.String kind;
 
   /** Time at which the subscription will expire, in milliseconds since Epoch. */
-  String validUntilTimestampMsec;
+  core.String validUntilTimestampMsec;
 
   /** Create new SubscriptionPurchase from JSON data */
-  SubscriptionPurchase.fromJson(Map json) {
+  SubscriptionPurchase.fromJson(core.Map json) {
     if (json.containsKey("autoRenewing")) {
       autoRenewing = json["autoRenewing"];
     }
@@ -32,8 +32,8 @@ class SubscriptionPurchase {
   }
 
   /** Create JSON Object for SubscriptionPurchase */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (autoRenewing != null) {
       output["autoRenewing"] = autoRenewing;
@@ -52,7 +52,7 @@ class SubscriptionPurchase {
   }
 
   /** Return String representation of SubscriptionPurchase */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 

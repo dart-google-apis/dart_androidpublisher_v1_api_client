@@ -16,13 +16,13 @@ class PurchasesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> cancel(String packageName, String subscriptionId, String token, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> cancel(core.String packageName, core.String subscriptionId, core.String token, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}/cancel";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (packageName == null) paramErrors.add("packageName is required");
     if (packageName != null) urlParams["packageName"] = packageName;
     if (subscriptionId == null) paramErrors.add("subscriptionId is required");
@@ -61,13 +61,13 @@ class PurchasesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<SubscriptionPurchase> get(String packageName, String subscriptionId, String token, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<SubscriptionPurchase> get(core.String packageName, core.String subscriptionId, core.String token, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (packageName == null) paramErrors.add("packageName is required");
     if (packageName != null) urlParams["packageName"] = packageName;
     if (subscriptionId == null) paramErrors.add("subscriptionId is required");

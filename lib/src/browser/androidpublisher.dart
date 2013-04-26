@@ -4,8 +4,8 @@ part of androidpublisher_v1_api_browser;
 /** Lets Android application developers access their Google Play accounts. */
 class Androidpublisher extends BrowserClient {
 
-  PurchasesResource _purchases;
-  PurchasesResource get purchases => _purchases;
+  PurchasesResource_ _purchases;
+  PurchasesResource_ get purchases => _purchases;
 
   /**
    * Data format for the response.
@@ -59,6 +59,6 @@ class Androidpublisher extends BrowserClient {
   Androidpublisher([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/androidpublisher/v1/applications/";
     rootUrl = "https://www.googleapis.com:443/";
-    _purchases = new PurchasesResource(this);
+    _purchases = new PurchasesResource_(this);
   }
 }

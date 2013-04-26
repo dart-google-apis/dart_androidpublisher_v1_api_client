@@ -1,8 +1,8 @@
 part of androidpublisher_v1_api_client;
 
-class PurchasesResource extends Resource {
+class PurchasesResource_ extends Resource {
 
-  PurchasesResource(Client client) : super(client) {
+  PurchasesResource_(Client client) : super(client) {
   }
 
   /**
@@ -38,7 +38,7 @@ class PurchasesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -83,7 +83,7 @@ class PurchasesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 

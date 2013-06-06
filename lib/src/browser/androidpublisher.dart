@@ -58,7 +58,7 @@ class Androidpublisher extends BrowserClient {
 
   Androidpublisher([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/androidpublisher/v1/applications/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _purchases = new PurchasesResource_(this);
   }
 }

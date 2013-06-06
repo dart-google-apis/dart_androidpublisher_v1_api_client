@@ -7,13 +7,13 @@ class SubscriptionPurchase {
   core.bool autoRenewing;
 
   /** Time at which the subscription was granted, in milliseconds since Epoch. */
-  core.String initiationTimestampMsec;
+  core.int initiationTimestampMsec;
 
   /** This kind represents a subscriptionPurchase object in the androidpublisher service. */
   core.String kind;
 
   /** Time at which the subscription will expire, in milliseconds since Epoch. */
-  core.String validUntilTimestampMsec;
+  core.int validUntilTimestampMsec;
 
   /** Create new SubscriptionPurchase from JSON data */
   SubscriptionPurchase.fromJson(core.Map json) {

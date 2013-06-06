@@ -58,7 +58,7 @@ class Androidpublisher extends ConsoleClient {
 
   Androidpublisher([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/androidpublisher/v1/applications/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _purchases = new PurchasesResource_(this);
   }
 }

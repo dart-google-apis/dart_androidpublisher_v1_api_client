@@ -21,13 +21,21 @@ class SubscriptionPurchase {
       autoRenewing = json["autoRenewing"];
     }
     if (json.containsKey("initiationTimestampMsec")) {
-      initiationTimestampMsec = json["initiationTimestampMsec"];
+      if(json["initiationTimestampMsec"] is core.String){
+        initiationTimestampMsec = core.int.parse(json["initiationTimestampMsec"]);
+      }else{
+        initiationTimestampMsec = json["initiationTimestampMsec"];
+      }
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
     if (json.containsKey("validUntilTimestampMsec")) {
-      validUntilTimestampMsec = json["validUntilTimestampMsec"];
+      if(json["validUntilTimestampMsec"] is core.String){
+        validUntilTimestampMsec = core.int.parse(json["validUntilTimestampMsec"]);
+      }else{
+        validUntilTimestampMsec = json["validUntilTimestampMsec"];
+      }
     }
   }
 

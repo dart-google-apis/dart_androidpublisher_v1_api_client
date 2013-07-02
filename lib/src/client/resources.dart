@@ -17,7 +17,6 @@ class PurchasesResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<core.Map> cancel(core.String packageName, core.String subscriptionId, core.String token, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}/cancel";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -38,16 +37,12 @@ class PurchasesResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "POST", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(data))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response;
   }
 
   /**
@@ -62,7 +57,6 @@ class PurchasesResource_ extends Resource {
    * [optParams] - Additional query parameters
    */
   async.Future<SubscriptionPurchase> get(core.String packageName, core.String subscriptionId, core.String token, {core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "{packageName}/subscriptions/{subscriptionId}/purchases/{token}";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -83,16 +77,13 @@ class PurchasesResource_ extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new SubscriptionPurchase.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new SubscriptionPurchase.fromJson(data));
   }
 }
 

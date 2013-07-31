@@ -1,9 +1,11 @@
-part of androidpublisher_v1_api_client;
+part of androidpublisher_v1_api;
 
-class PurchasesResource_ extends Resource {
+class PurchasesResource_ {
 
-  PurchasesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  PurchasesResource_(Client client) :
+      _client = client;
 
   /**
    * Cancels a user's subscription purchase. The subscription remains valid until its expiration time.

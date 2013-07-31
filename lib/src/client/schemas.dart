@@ -1,4 +1,4 @@
-part of androidpublisher_v1_api_client;
+part of androidpublisher_v1_api;
 
 /** A Purchase resource indicates the status of a user's subscription purchase. */
 class SubscriptionPurchase {
@@ -21,21 +21,13 @@ class SubscriptionPurchase {
       autoRenewing = json["autoRenewing"];
     }
     if (json.containsKey("initiationTimestampMsec")) {
-      if(json["initiationTimestampMsec"] is core.String){
-        initiationTimestampMsec = core.int.parse(json["initiationTimestampMsec"]);
-      }else{
-        initiationTimestampMsec = json["initiationTimestampMsec"];
-      }
+      initiationTimestampMsec = (json["initiationTimestampMsec"] is core.String) ? core.int.parse(json["initiationTimestampMsec"]) : json["initiationTimestampMsec"];
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
     if (json.containsKey("validUntilTimestampMsec")) {
-      if(json["validUntilTimestampMsec"] is core.String){
-        validUntilTimestampMsec = core.int.parse(json["validUntilTimestampMsec"]);
-      }else{
-        validUntilTimestampMsec = json["validUntilTimestampMsec"];
-      }
+      validUntilTimestampMsec = (json["validUntilTimestampMsec"] is core.String) ? core.int.parse(json["validUntilTimestampMsec"]) : json["validUntilTimestampMsec"];
     }
   }
 
@@ -64,3 +56,16 @@ class SubscriptionPurchase {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

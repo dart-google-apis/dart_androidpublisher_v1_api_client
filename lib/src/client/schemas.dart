@@ -1,6 +1,6 @@
 part of androidpublisher_v1_api;
 
-/** A Purchase resource indicates the status of a user's subscription purchase. */
+/** A SubscriptionPurchase resource indicates the status of a user's subscription purchase. */
 class SubscriptionPurchase {
 
   /** Whether the subscription will automatically be renewed when it reaches its current expiry time. */
